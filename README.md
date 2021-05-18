@@ -1,4 +1,4 @@
-Multipart-async [![Build Status](https://travis-ci.org/abonander/multipart-async.svg?branch=master)](https://travis-ci.org/abonander/multipart-async) [![On Crates.io](https://img.shields.io/crates/v/multipart-async.svg)](https://crates.io/crates/multipart-async)
+Multipart-async
 =========
 
 **NOTE**: pre-alpha software, mostly untested and still in development. Early feedback is welcome, but use at your own risk.
@@ -7,6 +7,11 @@ Futures-based client- and server-side abstractions for HTTP file uploads (POST r
 
 Preliminary support for Hyper 0.13 and async/await; 
 requires 1.39 to build (nightly-2019-08-15, will be released to beta on 2019-09-26).
+
+Update
+-------
+
+Fault tolerance if an additional header doesn't parse correctly https://github.com/eschudt/multipart-async/blob/master/src/server/field/headers.rs#L254
 
 License
 -------

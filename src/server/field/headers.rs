@@ -253,9 +253,12 @@ fn parse_headers(bytes: &[u8]) -> Result<FieldHeaders, String> {
 
             let hdr_val = HeaderValue::from_bytes(bytes).map_err(|e| {
                 format!("error on multipart field header \"{}\": {}", header.name, e)
-            })?;
+            });
 
-            out_headers.ext_headers.append(hdr_name, hdr_val);
+            if hdr_val.is_ok() {
+                let hdr_val = hdr_val.unwrap();
+                out_headers.ext_headers.append(hdr_name, hdr_val);
+            }
         }
     }
 
