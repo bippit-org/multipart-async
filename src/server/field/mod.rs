@@ -215,7 +215,7 @@ where
                 trace!("decoding surrogate: {:?}", &surrogate[..width]);
 
                 self.string
-                    .push_str(str::from_utf8(&surrogate[..width]).map_err(Utf8::<std::str::Utf8Error>)?);
+                    .push_str(str::from_utf8(&surrogate[..width]).map_err(Utf8)?);
 
                 let (_, rem) = data.split_into(needed);
                 data = rem;
